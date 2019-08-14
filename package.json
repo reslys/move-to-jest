@@ -1,0 +1,67 @@
+{
+  "name": "unit-test-expr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "lint:fix": "vue-cli-service lint --fix",
+    "test:unit": "vue-cli-service test:unit",
+    "convert-to-jest": "node_modules/@babel/node/bin/babel-node.js tests/convert-to-jest.js tests/unit"
+  },
+  "dependencies": {
+    "colors": "^1.3.3",
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.4.5",
+    "@babel/runtime": "^7.5.5",
+    "@vue/cli-plugin-babel": "^3.10.0",
+    "@vue/cli-plugin-eslint": "^3.10.0",
+    "@vue/cli-plugin-unit-mocha": "^3.10.0",
+    "@vue/cli-service": "^3.10.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.1.2",
+    "color": "^3.1.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "fs": "0.0.1-security",
+    "jscodeshift": "^0.6.4",
+    "lint-staged": "^8.1.5",
+    "replace": "^1.1.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
