@@ -30,6 +30,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "fs": "0.0.1-security",
+    "jest-codemods": "^0.20.0",
     "jscodeshift": "^0.6.4",
     "lint-staged": "^8.1.5",
     "replace": "^1.1.0",
