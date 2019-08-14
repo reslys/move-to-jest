@@ -43,17 +43,10 @@ function runJestCodemods() {
 }
 
 log(`Sup, time to run some ${'jest'.green} up in here`);
-// const specFiles = globSync(`${directory}/**/*.spec.js`)
-// log(`Found ${specFiles.length} .spec.js files, renaming to .test.js`)
-// const testFiles = specFiles.map(transformToJestFilename)
-// log(`renamed ${testFiles.length} .spec.js files to .test.js files in ${directory}`)
-// incrementalCommit(`[jest-convert] rename .spec.js to .test.js`)
 log('running jest-codemod');
 runJestCodemods();
-// incrementalCommit(`[jest-convert] ran jest-codemods`)
 log('running global replaces');
 runTransformations(directory);
-// incrementalCommit(`[jest-convert] ran global replaces`)
 log('done');
 
 function thereAreUnstagedChanges() {
@@ -69,14 +62,6 @@ function incrementalCommit(message) {
     execSync(`git commit -m "${message}"`);
   }
 }
-
-// function transformToJestFilename (oldPath) {
-//   const newPath = oldPath.replace('.spec.js', '.test.js')
-//   execSync(`mv ${oldPath} ${newPath}`)
-//   log(`[rename]`.green, oldPath.split('/').pop(), '->'.bold, newPath.split('/').pop())
-//   return newPath
-// }
-
 
 function runTransformations(directory) {
   function replace(from, to) {
