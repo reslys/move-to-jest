@@ -105,6 +105,11 @@ function runTransformations(directory) {
     replacement: 'jest.spyOn($1).mockReturnValue(',
   });
 
+  advancedReplace({
+    regex: /\.to\.include/g,
+    replacement:  '.toContain',
+  });
+
   // .to.be.a and .to.be.an
   advancedReplace({
     regex: /\.to((\.not)?)\.be\.(a|an)\((.*?)\)/g,
